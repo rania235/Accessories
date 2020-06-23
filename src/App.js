@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import NavBarComponent from './Componenets/NavBarComponent'
+import HomePage from './Pages/HomePage';
+import OfferPageComponent from './Componenets/OfferPageComponent';
+import FooterComponent from './Componenets/FooterComponent'; 
+import OrderPageComponent from './Componenets/OrderPageComponent'; 
+import ContactUsComponent from './Componenets/ContactUsComponent';
+import { Route, Switch, withRouter} from "react-router-dom";
+import Dashboard from './Admin/Dashboard';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+ 
+    return (
+      <>
+        {props.location.pathname.match(/admin/) ? (
+          <Dashboard />
+        )
+          : (
+            <React.Fragment>
+              <NavBarComponent />
+              <Switch>
+              <Route exact path="/" component={HomePage} />
+             <Route path="/offer" component={OfferPageComponent}/>
+             <Route path="/order" component={OrderPageComponent}/>
+             <Route path="/contact" component={ContactUsComponent} />
+              </Switch>
+              <FooterComponent />
+            </React.Fragment>
+          )}
+      </>
+    );
+  
 }
-
-export default App;
+  export default withRouter(App);
