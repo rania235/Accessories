@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
-* {
-	box-sizing: border-box;
-}
+
 
 .Login--body {
 	background: white;
@@ -16,24 +14,12 @@
 	padding-top: 40%;
 }
 
-h1 {
+.Create-Account {
 	font-weight: bold;
 	font-family: 'Dancing Script', cursive;
 	margin: 0;
 }
 
-h2 {
-	text-align: center;
-	font-family: 'Dancing Script', cursive;
-}
-
-p {
-	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
-}
 
 span {
 	font-size: 12px;
@@ -46,7 +32,7 @@ a {
 	margin: 15px 0;
 }
 
-button {
+.ghost {
 	border-radius: 20px;
 	border: 1px solid #b30086;
 	background-color: #b30086;
@@ -81,7 +67,7 @@ form {
 	text-align: center;
 }
 
-input {
+.input {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
@@ -90,7 +76,7 @@ input {
 	width: 100%;
 }
 
-.container {
+.container-style {
 	background-color: #fff;
 	border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 

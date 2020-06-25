@@ -1,18 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'semantic-ui-css/semantic.min.css'
-
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom';
+import Dashboard from './Admin/Dashboard';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+  <>
+    <Router>
+    <Switch>
+    <Route path='/admin' strict component={Dashboard}/>
+    <Route path='/' strict component={App}/>
+    </Switch>
+    </Router>
+    </>,
   document.getElementById('root')
 );
 

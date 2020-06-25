@@ -1,35 +1,35 @@
 import React, {Component} from 'react';
 import './App.css';
-import NavBarComponent from './Componenets/NavBarComponent'
 import HomePage from './Pages/HomePage';
-import OfferPageComponent from './Componenets/OfferPageComponent';
-import FooterComponent from './Componenets/FooterComponent'; 
-import OrderPageComponent from './Componenets/OrderPageComponent'; 
-import ContactUsComponent from './Componenets/ContactUsComponent';
-import { Route, Switch, withRouter} from "react-router-dom";
-import Dashboard from './Admin/Dashboard';
+import OfferPageComponent from './Componenets/OfferPage/OfferPageComponent';
+import Footer from './Componenets/Footer/FooterComponent'; 
+import OrderPageComponent from './Componenets/Order/OrderPageComponent'; 
+import ContactUsComponent from './Componenets/Contact/ContactUsComponent';
+import {Route, Switch, withRouter} from "react-router-dom";
+//import Dashboard from './Admin/Dashboard';
+import AboutUs from './Componenets/AboutUs/AboutUsComponent';
+import NavBarComponent from './Componenets/Navbar/NavBarComponent';
+//import Login from './Pages/Login';
 
-function App(props) {
+class App extends Component{
+  constructor(props){
+    super(props)
+  }
+  render() {
  
     return (
       <>
-        {props.location.pathname.match(/admin/) ? (
-          <Dashboard />
-        )
-          : (
-            <React.Fragment>
               <NavBarComponent />
               <Switch>
-              <Route exact path="/" component={HomePage} />
-             <Route path="/offer" component={OfferPageComponent}/>
-             <Route path="/order" component={OrderPageComponent}/>
-             <Route path="/contact" component={ContactUsComponent} />
+              <Route exact path="/" strict exact render={(props)=><HomePage/>} />
+             <Route path="/offer" strict exact render={(props)=><OfferPageComponent/>}/>
+             <Route path="/order" strict exact render={(props)=><OrderPageComponent/>}/>
+             <Route path="/about" strict exact render={(props)=><AboutUs/>}/>
+             <Route path="/contact" strict exact render={(props)=><ContactUsComponent/>} />
               </Switch>
-              <FooterComponent />
-            </React.Fragment>
-          )}
+              <Footer />
       </>
     );
-  
+    }
 }
   export default withRouter(App);

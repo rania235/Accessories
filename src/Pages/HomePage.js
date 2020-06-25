@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import './HomePage.scss';
-import SliderComponent from '../Componenets/SliderComponent';
-import HomePageProductsComponent from '../Componenets/HomePageProductsComponent';
-import AboutUsComponent from '../Componenets/AboutUsComponent';
+import SliderComponent from '../Componenets/Slider/SliderComponent';
+import HomePageProductsComponent from '../Componenets/HomeProducts/HomePageProductsComponent';
+
 
 
 class HomePage extends Component {
-  
+  constructor(props){
+    super(props)
+  }
 
   render(){
     return(
@@ -15,7 +17,7 @@ class HomePage extends Component {
       
 <HomePageProductsComponent/>
 <SliderComponent/>
-<AboutUsComponent/>
+
       </div>
     );
   }

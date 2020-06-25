@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-import '../Componenets/NavBarComponent.scss';
-import { Link } from 'react-router-dom';
-import Images from '../Images/Images.jpg';
+import './NavBarComponent.scss';
+import { withRouter, Link } from 'react-router-dom';
+import Images from '../../Images/Images.jpg';
+import back from'../../Images/back.jpg'
 
 class NavBarComponent extends Component {
+  constructor(props){
+    super(props)
+  }
   render(){
     return(
       <div className="NavBarComponent">
-
-
-
 <div className="DashboardNavbar">
 <div className="main-container">
       <div className="profile">
@@ -18,13 +19,14 @@ class NavBarComponent extends Component {
           <div className="profile-name"></div>
           <h1 className="profile-nav">CAMELIA</h1>
         </div>
-        <img src="https://images.unsplash.com/photo-1508247967583-7d982ea01526?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="" className="profile-cover"/>
+        <img src={back} alt="" className="profile-cover"/>
         <div className="profile-menu">
           <Link to="/" className="profile-menu-link">Home</Link>
           <Link to="/offer" className="profile-menu-link">Offers</Link>
           <Link to="/order" className="profile-menu-link">Orders</Link>
           <Link to="/contact" className="profile-menu-link"> Contact Us</Link>
-        
+          <Link to="/about" className="profile-menu-link"> AboutUs</Link>
+          <Link to="#"className="profile-menu-link">Log in</Link>
         </div>
       </div>
 </div>
@@ -35,4 +37,4 @@ class NavBarComponent extends Component {
   }
 }
 
-export default NavBarComponent;
+export default withRouter(NavBarComponent);

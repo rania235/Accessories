@@ -1,0 +1,73 @@
+
+.OfferPageComponent {
+  background-color:#FFF4F2;
+  padding-top: 50px;
+}
+.container-fluid {
+  width: 90%;
+text-align: center;
+}
+
+#about{
+  height:30em;
+}
+.Offers {
+  font-family: 'Dancing Script', cursive;
+}
+.Products {
+  color: #b30086;
+  font-family: 'Dancing Script', cursive;
+  font-weight:800;
+  font-size:30px;
+}
+.buy-button {
+  color: #b30086;
+  font-family: 'Dancing Script', cursive;
+  font-weight:800;
+  font-size:30px;
+  border-color: #b30086 solid 2px;
+}
+
+#angelnecklace{
+  background-image:url("https://i.pinimg.com/originals/9c/eb/c2/9cebc202c3b704c46808706783027e97.jpg");
+  overflow:hidden;
+  background-position:center;
+}
+
+.img{
+  height:350px;
+  max-width:auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+img:hover{
+  opacity:50%;
+}
+#info{
+  display: flex;
+  align-items: center;
+  background-color: #b30086;
+}
+.pink{
+  background-color: #b30086;
+}
+.news{
+  color:white;
+}
+
+.sticky-top{
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
+.pad{
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+@media(max-width:768px){
+  #angelnecklace{
+    padding-bottom: 145px;
+  }
+}
