@@ -1,73 +1,53 @@
 
+.container-product {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding-top: 15%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+.descrption1 {
+  text-decoration: line-through;
+}
 .OfferPageComponent {
-  background-color:#FFF4F2;
-  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-image: url("https://cdn.hipwallpaper.com/i/63/90/qZAfaO.jpg");
+
 }
-.container-fluid {
-  width: 90%;
-text-align: center;
+.container-product img {
+  width: 100%;
 }
 
-#about{
-  height:30em;
-}
-.Offers {
-  font-family: 'Dancing Script', cursive;
-}
-.Products {
-  color: #b30086;
-  font-family: 'Dancing Script', cursive;
-  font-weight:800;
-  font-size:30px;
-}
-.buy-button {
-  color: #b30086;
-  font-family: 'Dancing Script', cursive;
-  font-weight:800;
-  font-size:30px;
-  border-color: #b30086 solid 2px;
+.container-product .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: black;
+  color: #1abc9c;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
 }
 
-#angelnecklace{
-  background-image:url("https://i.pinimg.com/originals/9c/eb/c2/9cebc202c3b704c46808706783027e97.jpg");
-  overflow:hidden;
-  background-position:center;
+.container-product .btn:hover {
+  background-color: black;
 }
 
-.img{
-  height:350px;
-  max-width:auto;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-img:hover{
-  opacity:50%;
-}
-#info{
-  display: flex;
-  align-items: center;
-  background-color: #b30086;
-}
-.pink{
-  background-color: #b30086;
-}
-.news{
-  color:white;
-}
+.btn1 {
+  color: #1abc9c;
+  background-color: black;
+  margin-bottom: 5%;
+  margin-right: 5%;
+ padding-bottom: 5%;
+ padding-top: 5%;
+ width: 40%;
+ font-size: 25px;
 
-.sticky-top{
-  position:fixed;
-  top:0;
-  width:100%;
-}
-
-.pad{
-  padding-top: 15px;
-  padding-bottom: 10px;
-}
-@media(max-width:768px){
-  #angelnecklace{
-    padding-bottom: 145px;
-  }
 }

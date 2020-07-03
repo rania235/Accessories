@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
 import DashboardNavbar from './DashboardNavbar/DashboardNavbar';
 import Home from './Homedashboard/Home';
-import ItemsComponent from './Items/ItemsComponent';
+import OffersItemsComponent from './Offers/OffersItemsComponent';
 import UserComponent from './User/UserComponent';
 import AdminComponent from './Admins/AdminComponent';
 
@@ -17,16 +17,17 @@ class Dashboard extends Component {
   render() {
     return (
           
-          <Router>
-            <DashboardNavbar/>
+         <div style={{display:"grid",gridTemplateColumns:"1fr 4fr"}}>
+
+<DashboardNavbar/>
             <Switch>
-         <Route strict exact path="/admin" render={()=><Home/>} />
-         <Route strict exact path="/admin/items" render={()=><ItemsComponent/>} />
-         <Route strict exact path="/admin/user" render={()=><UserComponent/>} />
-         <Route strict exact path="/admin/component" render={()=><AdminComponent/>} />
+         <Route strict exact path="/admin/home" render={()=><Home/>} />
+         <Route strict  path="/admin/items" render={()=><OffersItemsComponent/>} />
+         <Route strict  path="/admin/user" render={()=><UserComponent/>} />
+         <Route strict  path="/admin/component" render={()=><AdminComponent/>} />
          </Switch>
-         </Router>
-          
+
+         </div>          
     );
   }
 }

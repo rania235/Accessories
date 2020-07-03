@@ -11,78 +11,53 @@ class OrderPageComponent extends Component {
   render(){
     return( 
    <div className="OrderPageComponent">
-<div class="pCard_card">
-   <div class="pCard_up">
-      
-   <div class="pCard_add"><AiTwotoneDelete/></div>
-   </div>
-   <div class="pCard_down">
-      <div>
-         <p>Price</p>
-         <p>30$</p>
-      </div>
-      <div>
-         <p>Views</p>
-         <p>21,579</p>
-      </div>
-      <div>
-         <p>Likes</p>
-         <p>1,976</p>
-      </div>
-   </div>
-   
+
+<div id="app">
+  <h1 className="OrderPageComponent-h1">ORDER</h1>
+  <ul class="product-box">
+    <li v-for="item in items">
+      <input type="checkbox" v-onclick="selected(item)"/>
+      <img src={Acc6} alt="" />
+      <h4>name</h4>
+      <p>price</p>
+    </li>
+  </ul>
+  <button>Delete</button>
 </div>
 
 
-
-
-<div class="pCard_card">
-   <div class="pCard_up">
-      
-      <div class="pCard_add"><AiTwotoneDelete/></div>
-   </div>
-   <div class="pCard_down">
-      <div>
-         <p>Projects</p>
-         <p>126</p>
-      </div>
-      <div>
-         <p>Views</p>
-         <p>21,579</p>
-      </div>
-      <div>
-         <p>Likes</p>
-         <p>1,976</p>
-      </div>
-   </div>
-   
+<div id="app">
+  <h1 className="OrderPageComponent-h1">ORDER</h1>
+  <ul class="product-box">
+    <li v-for="item in items">
+      <input type="checkbox" v-onclick="selected(item)"/>
+      <img src={Acc6} alt="" />
+      <h4>name</h4>
+      <p>price</p>
+    </li>
+  </ul>
+  <button>Delete</button>
 </div>
 
 
+<div id="app">
+  <h1 className="OrderPageComponent-h1">ORDER</h1>
+  <ul class="product-box">
+    <li v-for="item in items">
+      <input type="checkbox" v-onclick="selected(item)"/>
+      <img src={Acc6} alt="" />
+      <h4>name</h4>
+      <p>price</p>
+    </li>
+  </ul>
+  <button>Delete</button>
+</div>
 
-<div class="pCard_card">
-   <div class="pCard_up">
-      
-   <div class="pCard_add"><AiTwotoneDelete/></div>
-   </div>
-   <div class="pCard_down">
-      <div>
-         <p>Projects</p>
-         <p>126</p>
-      </div>
-      <div>
-         <p>Comments</p>
-         <p>21,579</p>
-      </div>
-      <div>
-         <p>Likes</p>
-         <p>1,976</p>
-      </div>
-   </div>
-   
-</div>
-<button className="order-button">Buy these order</button>
-</div>
+
+     </div>
+  
+
+
 
 
 

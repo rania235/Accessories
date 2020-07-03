@@ -10,6 +10,9 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -18,11 +21,16 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
+   
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>  
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -32,6 +40,260 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+<!--     <style type="text/css">
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+section {
+  padding: 80px 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+* {
+  font-size: 16px;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.uppercase__font {
+  text-transform: uppercase;
+}
+
+.capitalize__font {
+  text-transform: capitalize;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 50px;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 35px;
+  }
+}
+
+h3 {
+  font-size: 40px;
+}
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 25px;
+  }
+}
+
+h4 {
+  font-size: 30px;
+}
+@media screen and (max-width: 768px) {
+  h4 {
+    font-size: 20px;
+  }
+}
+
+h5 {
+  font-size: 24px;
+}
+@media screen and (max-width: 768px) {
+  h5 {
+    font-size: 18px;
+  }
+}
+
+h6 {
+  font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  h6 {
+    font-size: 14px;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 900;
+}
+
+.fw-1 {
+  font-weight: 100 !important;
+}
+
+.fw-2 {
+  font-weight: 200 !important;
+}
+
+.fw-3 {
+  font-weight: 300 !important;
+}
+
+.fw-4 {
+  font-weight: 400 !important;
+}
+
+.fw-5 {
+  font-weight: 500 !important;
+}
+
+.fw-6 {
+  font-weight: 600 !important;
+}
+
+.fw-7 {
+  font-weight: 700 !important;
+}
+
+.fw-8 {
+  font-weight: 800 !important;
+}
+
+.fw-9 {
+  font-weight: 900 !important;
+}
+
+.lh-1 {
+  line-height: 1rem !important;
+}
+
+.lh-2 {
+  line-height: 2rem !important;
+}
+
+.lh-3 {
+  line-height: 3rem !important;
+}
+
+.lh-4 {
+  line-height: 4rem !important;
+}
+
+.lh-5 {
+  line-height: 5rem !important;
+}
+
+.lh-6 {
+  line-height: 6rem !important;
+}
+
+.lh-7 {
+  line-height: 7rem !important;
+}
+
+.lh-8 {
+  line-height: 8rem !important;
+}
+
+.lh-9 {
+  line-height: 9rem !important;
+}
+
+.normal {
+  font-weight: normal !important;
+}
+
+.no__outline {
+  outline-style: none !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.ul__list--inline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ul__list--inline > li {
+  display: inline-block;
+}
+
+.ul__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sosmed__list li a {
+  width: 40px;
+  height: 40px;
+  transition: .5s;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  color: black;
+}
+.sosmed__list li a:hover {
+  color: white;
+  background-color: black;
+  box-shadow: 0px 10px 40px #3e3c3c7a;
+}
+.sosmed__list li a i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+}
+.slider__image.slick-slider {
+  position: absolute !important;
+  width: 100%;
+  z-index: -1;
+}
+.slider__image div {
+  height: 100%;
+  width: 100%;
+}
+.slider__image div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card__wrapper {
+  background-color: white;
+}
+.card__wrapper li {
+  width: 100%;
+}
+.card__wrapper img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.color__white {
+  color: white;
+}
+
+    </style> -->
     <title>React App</title>
   </head>
   <body>
@@ -47,5 +309,10 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    
   </body>
 </html>

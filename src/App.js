@@ -9,7 +9,8 @@ import {Route, Switch, withRouter} from "react-router-dom";
 //import Dashboard from './Admin/Dashboard';
 import AboutUs from './Componenets/AboutUs/AboutUsComponent';
 import NavBarComponent from './Componenets/Navbar/NavBarComponent';
-//import Login from './Pages/Login';
+//import ProductComponent from './Componenets/product/ProductComponent';
+import Login from './Pages/Login';
 
 class App extends Component{
   constructor(props){
@@ -19,7 +20,8 @@ class App extends Component{
  
     return (
       <>
-              <NavBarComponent />
+     {/*  <Login/> */}
+               <NavBarComponent />
               <Switch>
               <Route exact path="/" strict exact render={(props)=><HomePage/>} />
              <Route path="/offer" strict exact render={(props)=><OfferPageComponent/>}/>
@@ -27,7 +29,7 @@ class App extends Component{
              <Route path="/about" strict exact render={(props)=><AboutUs/>}/>
              <Route path="/contact" strict exact render={(props)=><ContactUsComponent/>} />
               </Switch>
-              <Footer />
+              <Footer />  
       </>
     );
     }

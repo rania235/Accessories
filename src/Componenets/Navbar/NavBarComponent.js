@@ -11,27 +11,37 @@ class NavBarComponent extends Component {
   render(){
     return(
       <div className="NavBarComponent">
-<div className="DashboardNavbar">
-<div className="main-container">
-      <div className="profile">
-        <div className="profile-avatar">
-          <img src={Images} alt="" className="profile-img"/>
-          <div className="profile-name"></div>
-          <h1 className="profile-nav">CAMELIA</h1>
+
+    <div class="header">
+        <div class="cont">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>Camelia</h1>
+                </div>
+                <div class="menu">
+                    <ul>
+                 <li><Link to="/" className="profile-menu-link">Home</Link></li>
+                   <li> <Link to="/offer" className="profile-menu-link">Offers</Link></li>
+                   <li> <Link to="/order" className="profile-menu-link">Orders</Link></li>
+                   <li> <Link to="/contact" className="profile-menu-link"> Contact Us</Link></li>
+                  <li> <Link to="/about" className="profile-menu-link"> AboutUs</Link></li> 
+                 <li> <Link to="#"className="profile-menu-link">Log in</Link></li>  
+                       
+                        
+                    </ul>
+                </div>
+            </div>
         </div>
-        <img src={back} alt="" className="profile-cover"/>
-        <div className="profile-menu">
-          <Link to="/" className="profile-menu-link">Home</Link>
-          <Link to="/offer" className="profile-menu-link">Offers</Link>
-          <Link to="/order" className="profile-menu-link">Orders</Link>
-          <Link to="/contact" className="profile-menu-link"> Contact Us</Link>
-          <Link to="/about" className="profile-menu-link"> AboutUs</Link>
-          <Link to="#"className="profile-menu-link">Log in</Link>
+    </div>
+    <div class="foto">
+       {/*  <img src="https://cdn.hipwallpaper.com/i/63/90/qZAfaO.jpg" alt=""/> */}
+        <div class="yazi">
+          
+           
         </div>
+    </div>
+  
       </div>
-</div>
-</div>
-</div>
     
     );
   }

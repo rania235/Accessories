@@ -20,6 +20,7 @@ class Login extends Component {
 }
 render(){
   return(
+    <div className="Login-component">
 		<div className="Login--body">
        <div className={`container-style ${this.state.containerClass}`} id="container-style">
   <div class="form-container sign-up-container">
@@ -34,7 +35,7 @@ render(){
       <input type="text" placeholder="Name" className="input" />
       <input type="email" placeholder="Email" className="input"/>
       <input type="password" placeholder="Password" className="input" />
-      <button className="ghost">Sign Up</button>
+      <button className="ghost-login">Sign Up</button>
     </form>
   </div>
   <div className="form-container sign-in-container">
@@ -49,23 +50,24 @@ render(){
       <input type="email" placeholder="Email"  className="input"/>
       <input type="password" placeholder="Password"className="input" />
       <a href="#" className="forgot-password">Forgot your password?</a>
-      <button className="ghost">Sign In</button>
+      <button className="ghost-login">Sign In</button>
     </form>
   </div>
   <div className="overlay-container">
     <div className="overlay">
       <div className="overlay-panel overlay-left">
         <h1 className="Create-Account">Welcome To Boutique Camelia!</h1>
-        <button className="ghost" id="signIn" onClick={this.switchLeft}>Sign In</button>
+        <button className="ghost-login" id="signIn" onClick={this.switchLeft}>Sign In</button>
       </div>
       <div className="overlay-panel overlay-right">
         <h1 className="Create-Account">Welcome Back To Boutique Camelia</h1>
-        <button className="ghost" id="signUp" onClick={this.switchRight}>Sign Up</button>
+        <button className="ghost-login" id="signUp" onClick={this.switchRight}>Sign Up</button>
       </div>
     </div>
   </div>
 </div>
 </div> 
+</div>
 
 
   );

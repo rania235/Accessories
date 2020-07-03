@@ -1,16 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './AdminComponent.scss';
 
+//import DashboardNavbar from '../DashboardNavbar/DashboardNavbar';
 
+export default class AdminComponent extends Component {
 
-class AdminComponent extends Component {
-  render(){
-    return(
-<div>
-<h1>admin</h1>
-</div>
-    );
-  }
+  state = {
+    AdminComponent:[]
+};
+
+render(){
+  return(
+    <div>
+      <h1>AdminComponent</h1>
+    </div>
+  )
 }
 
-export default AdminComponent;
+}

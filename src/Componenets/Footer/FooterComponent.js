@@ -9,9 +9,10 @@ class FooterComponent extends Component {
 
   render(){
     return(
+      <div className="FooterComponent">
       <div id="footer">
-      <hr />
-      <p>Copyright &copy; 2020 Boutique Camelia All Rights Reserved</p>
+      <h6>Copyright &copy; 2020 Boutique Camelia All Rights Reserved</h6>
+  </div>
   </div>
     
  

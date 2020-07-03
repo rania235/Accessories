@@ -1,0 +1,58 @@
+
+$lightGrey: #F2F2F2;
+$white: #FFFFFF;
+$blue: #1849AB;
+
+
+.Home {
+  background-color: $lightGrey;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: 'Arial';
+  justify-content: center;
+  padding-top: 5%;
+}
+.button-products {
+  height: 40px;
+  width: 200%;
+  padding-top: -1px;
+  color: white;
+  background-color: rgb(37, 37, 119) !important;
+}
+.cardsWrapper {
+  display: flex;
+}
+.Form-Productz {
+  background-color: rgb(37, 37, 119);
+}
+.card {
+  background-color: $white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin: 1.5rem;
+  width: 300px;
+}
+
+.card-figure {
+  margin: 0;
+  min-height: 1px;
+}
+
+.card-image {
+  display: block;
+  max-width: 100%;
+}
+
+.card-block {
+  padding: 1rem 2rem 2rem;
+}
+
+
+.modal-outer.visible .modal-inner {
+  transform: translateY(0);
+}
+
+@media screen and (max-width:990px) {
+  .cardsWrapper { 
+    flex-wrap: wrap;  
+  }
+}

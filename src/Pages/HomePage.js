@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './HomePage.scss';
 import SliderComponent from '../Componenets/Slider/SliderComponent';
-import HomePageProductsComponent from '../Componenets/HomeProducts/HomePageProductsComponent';
+import ProductComponent from '../Componenets/product/ProductComponent';
 
 
 
@@ -14,9 +14,10 @@ class HomePage extends Component {
     return(
       <div className="HomePage">
       <h1  className="HomePagetitle">Welcome To Boutique Camelia</h1>
-      
-<HomePageProductsComponent/>
-<SliderComponent/>
+      <ProductComponent />
+      <SliderComponent/> 
+     
+
 
       </div>
     );

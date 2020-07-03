@@ -1,39 +1,39 @@
 import React, {Component} from 'react';
 import './DashboardNavbar.scss';
 import { Link, withRouter } from 'react-router-dom';
-import image from '../AdminImages/index.jpg'
+//import back from '../AdminImages/back.jpg'
 
 class DashboardNavbar extends Component {
-  constructor(props){
-    super(props)
-  }
+  
   render(){
     return(
-      <div className="DashboardNavbar1">
-        <div id="dashboard">
   
-  <div id="sidebar" class="col-4">
-      <a href="#" class="logo">DASHBOARD</a>
-      
-      <div class="user-info">
-        <span class="status-online"></span>
-        <img src={image} class="rounded-circle"/>
-        <h3>Camelia</h3>
-        <span class="user-rank">Accessories</span>
-      </div>
-      
-      <ul class="menu">
-      
-      <Link to="/admin/home" class="active"><i class="fas fa-folder"></i> homepage</Link>
-      <Link to="/admin/items" class="active"><i class="fas fa-folder"></i> Items</Link>
-      <Link to="/admin/user" class="active"><i class="fas fa-folder"></i> User</Link>
-      <Link to="/admin/component" class="active"><i class="fas fa-folder"></i> Admin</Link>
+  
+      <div className="DashboardNavbar">
+         <div class="header1">
+       
+                
+                <div class="menu1">
+                    <ul>
+                    <li> <Link to="/admin/home" className="home-navbar"> homepage</Link></li>
+                    <li> <Link to="/admin/items" className="home-navbar"> Items</Link></li>
+                    <li><Link to="/admin/user" className="home-navbar"> User</Link></li>
+                    <li><Link to="/admin/component" style={{border: "none"}} className="home-navbar"> Admin</Link></li>
+                    </ul>
+                </div>
+            </div>
         
-      </ul>
+    
+    
+  
+        {/* <div className="sidenav">
+      <Link to="/admin/home" className="sidenav--link"><i class="fas fa-folder"></i> homepage</Link>
+      <Link to="/admin/items" className="sidenav--link"><i class="fas fa-folder"></i> Items</Link>
+      <Link to="/admin/user" className="sidenav--link"><i class="fas fa-folder"></i> User</Link>
+      <Link to="/admin/component" className="sidenav--link"><i class="fas fa-folder"></i> Admin</Link>
+      </div> */}
+      
   </div>
-</div>
-
-</div>
     )
   }
 }

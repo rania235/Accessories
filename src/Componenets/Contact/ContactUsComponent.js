@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './ContactUsComponent.scss';
+import { scryRenderedDOMComponentsWithTag } from 'react-dom/test-utils';
 
 
 
@@ -13,7 +14,7 @@ class ContactUsComponent extends Component {
       <div className="container">
   
   <div className="contact-method">
-    <i className="fas fa-envelope"></i>
+    <i className="contact"className="fas fa-envelope"></i>
     <span>example@domain.com</span>
   </div>
   
@@ -27,28 +28,17 @@ class ContactUsComponent extends Component {
     <span>Barcelona Spain</span>
   </div>
 </div>
-<div class="container">
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name.."/>
+<div className="contact">
+   <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname"className="firsname-input"/>
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name.."/>
+    <label for="fname">Last Name</label>
+    <input type="text" id="fname" name="firstname"className="firsname-input"/>
 
-    <label for="country">City</label>
-    <select id="country" name="country">
-      <option value="australia">Beirut</option>
-      <option value="canada">Aakar</option>
-      <option value="usa">Saida</option>
-    </select>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
-
-    <input type="submit" value="Submit" className="buttonSubmit"/>
-  </form>
+    <label for="fname"> Your Message</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style={{height:"200px", color:"black"}} className="textarea"></textarea>
+    <button  className="butn">Send</button>
 </div>
-
 </div>
 
 

@@ -11,7 +11,7 @@ ReactDOM.render(
   <>
     <Router>
     <Switch>
-    <Route path='/admin' strict component={Dashboard}/>
+    <Route path='/admin'  component={Dashboard}/>
     <Route path='/' strict component={App}/>
     </Switch>
     </Router>
