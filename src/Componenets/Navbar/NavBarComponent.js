@@ -19,13 +19,13 @@ class NavBarComponent extends Component {
                     <h1>Camelia</h1>
                 </div>
                 <div class="menu">
-                    <ul>
-                 <li><Link to="/" className="profile-menu-link">Home</Link></li>
-                   <li> <Link to="/offer" className="profile-menu-link">Offers</Link></li>
-                   <li> <Link to="/order" className="profile-menu-link">Orders</Link></li>
-                   <li> <Link to="/contact" className="profile-menu-link"> Contact Us</Link></li>
-                  <li> <Link to="/about" className="profile-menu-link"> AboutUs</Link></li> 
-                 <li> <Link to="#"className="profile-menu-link">Log in</Link></li>  
+                    <ul className="menu-navbar-user">
+                 <li className="li-navbar"><Link to="/" className="profile-menu-link">Home</Link></li>
+                   <li className="li-navbar"> <Link to="/offer" className="profile-menu-link">Offers</Link></li>
+                   <li className="li-navbar"> <Link to="/order" className="profile-menu-link">Orders</Link></li>
+                   <li className="li-navbar"> <Link to="/contact" className="profile-menu-link"> Contact Us</Link></li>
+                  <li className="li-navbar"> <Link to="/about" className="profile-menu-link"> AboutUs</Link></li> 
+                 <li className="li-navbar"> <Link to="#"className="profile-menu-link">Log in</Link></li>  
                        
                         
                     </ul>

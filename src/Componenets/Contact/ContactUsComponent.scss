@@ -29,6 +29,8 @@
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 5%;
+  font-size: 25px;
+  bottom: 20px;
  
 }
 .container2 {
@@ -62,7 +64,9 @@
     z-index: 1;
     transition: transform .6s;
   }
-  
+  .contact-form-text {
+    font-size: 20px;
+  }
   &:hover i {
     transform: translatey(-40px);
   }

@@ -14,87 +14,83 @@ export default class Home extends Component {
 render(){
   return(
     <>
-    <div className="Home">
-    
-    <div class="cardsWrapper">
-        <article class="card">
-          <figure class="card-figure">
-            
-            <img class="card-image" src={index} alt="Image description" style={{ height:"150px"}}/>
-    </figure>
-    <div class="card-block">
-        <h2>Nature</h2>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis gravida lorem. Nulla porta, elit eget facilisis ullamcorper, ipsum nisi suscipit arcu, quis ultricies felis massa non arcu.</p>
-     </div>
-     </article>
-     </div>
-
-
-
-     <div class="cardsWrapper">
-        <article class="card">
-          <figure class="card-figure">
-            <img class="card-image" src={index} alt="Image description" style={{ height:"150px"}}/>
-    </figure>
-    <div class="card-block">
-        <h2>Nature</h2>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis gravida lorem. Nulla porta, elit eget facilisis ullamcorper, ipsum nisi suscipit arcu, quis ultricies felis massa non arcu.</p>
-     </div>
-     </article>
-     </div>
-
-
-
-     <div class="cardsWrapper">
-        <article class="card">
-          <figure class="card-figure">
-            <img class="card-image" src={index} alt="Image description" style={{ height:"150px"}}/>
-    </figure>
-    <div class="card-block">
-        <h2>Nature</h2>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis gravida lorem. Nulla porta, elit eget facilisis ullamcorper, ipsum nisi suscipit arcu, quis ultricies felis massa non arcu.</p>
-     </div>
-     </article>
-     </div>
-
-
-
-     <div class="cardsWrapper">
-        <article class="card">
-          <figure class="card-figure">
-            <img class="card-image" src={index} alt="Image description" style={{ height:"150px"}}/>
-    </figure>
-    <div class="card-block">
-        <h2>Nature</h2>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis gravida lorem. Nulla porta, elit eget facilisis ullamcorper, ipsum nisi suscipit arcu, quis ultricies felis massa non arcu.</p>
-     </div>
-     </article>
-     </div>
-     <Popup trigger={<button className="button-products"> Add Products</button>}
-             modal
-           closeOnDocumentClick
-          >
-   <div>
-          <form className="Form-Productz" >
-            <label >Price</label>
-              <input  type="text" name="" />
-              <label >Name of Brand</label>
-                <input  type="text" name="" />
-                  <label >Text</label>
-                   <textarea  type="text" name="" />
-              <label>Image</label>
-                 <input type="file" />
-               <div >
-              <button >Save</button>
-               <button >Cancel</button>
-              </div>
-            </form>
+<Popup trigger={<button className="dash-board-button"> Add Products</button>}
+    modal
+    closeOnDocumentClick
+    >
+    <div className="addProducts">
+    <form className="addProducts--Form">
+    <label >Price</label>
+    <input  type="text" name="" />
+    <label >Name of Brand</label>
+    <input  type="text" name="" />
+    <label >Text</label>
+    <textarea type="text" name="" />
+    <label >Image</label>
+    <input  type="file" />
+    <div >
+    <button >Save</button>
+    <button >Cancel</button>
     </div>
-</Popup>
+    </form>
+    </div>
+    </Popup>
+    <div className="Home-component">
+   <div className="card-Home-component">
+  <img src={index} alt="Denim Jeans"className="image" style={{width:"100%" }}/>
+  <h1>Tailored Jeans</h1>
+  <p className="price">$19.99</p>
+  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
 
- </div>
- </>
+</div>
+
+
+
+<div className="card-Home-component">
+  <img src={index} alt="Denim Jeans"className="image"  style={{width:"100%"}}/>
+  <h1>Tailored Jeans</h1>
+  <p className="price">$19.99</p>
+  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
  
+</div>
+
+
+<div className="card-Home-component">
+  <img src={index} alt="Denim Jeans" className="image"  style={{width:"100%"}}/>
+  <h1>Tailored Jeans</h1>
+  <p className="price">$19.99</p>
+  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+</div>
+<div className="card-Home-component">
+  <img src={index} alt="Denim Jeans" className="image"  style={{width:"100%" }}/>
+  <h1>Tailored Jeans</h1>
+  <p className="price">$19.99</p>
+  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+  
+</div>
+
+
+<div className="card-Home-component">
+  <img src={index} alt="Denim Jeans" className="image"  style={{width:"100%" }}/>
+  <h1>Tailored Jeans</h1>
+  <p className="price">$19.99</p>
+  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+  
+</div>
+
+<div className="card-Home-component">
+  <img src={index} alt="Denim Jeans" className="image"  style={{width:"100%" }}/>
+  <h1>Tailored Jeans</h1>
+  <p className="price">$19.99</p>
+  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+
+</div>
+
+
+
+    </div>
+     
+    </>
   )
 }
 

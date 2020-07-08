@@ -2,14 +2,70 @@ import React, {Component} from 'react';
 import './SliderComponent.scss';
 import Acc9 from '../../Images/acc9.jpg';
 import Popup from "reactjs-popup";
+import axios from 'axios';
 
 
 class SliderComponent extends React.Component {
-  state = {
-    like: true,
-    dislike: false,
-    position: {x: 0, y: 0}
+  constructor(props){
+     super(props)
+     this.state={
+      like: true,
+      dislike: false,
+      position: {x: 0, y: 0},
+      name:'',
+      description:'',
+      comments:''
+
+     }
   }
+
+ 
+
+componentDidMount() {
+  axios.get(`http://127.0.0.1:8000/api/userLike/`, {
+      headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      }
+  })
+      .then(res => {
+        console.log(res.data)
+          this.setState({ data:res.data.userlike });
+      })
+      .catch(err => {
+          console.log(err);
+      });
+      axios.get(`http://127.0.0.1:8000/api/usercomment`, {
+      headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      }
+  })
+      .then(res => {
+        console.log(res.data)
+          this.setState({ data:res.data.UserComment });
+      })
+      .catch(err => {
+          console.log(err);
+      });
+
+      axios.get(`http://127.0.0.1:8000/api/products/`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+        .then(res => {
+          console.log(res.data)
+            this.setState({ data:res.data.products });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
+
+
+ 
 
   ocean = React.createRef();
  
@@ -21,13 +77,13 @@ handleClickLike(){
     dislike
   });
 }
-handleClickDislike(){
-  const like = ((this.state.dislike) == this.state.like  ? false : '');
-  this.setState({
-    dislike: !this.state.dislike,
-    like
-  });
-}; 
+// handleClickDislike(){
+//   const like = ((this.state.dislike) == this.state.like  ? false : '');
+//   this.setState({
+//     dislike: !this.state.dislike,
+//     like
+//   });
+// }; 
 /*================ Parallax =================*/
 onMouseMove(e) {
   this.setState({
@@ -40,7 +96,7 @@ onMouseMove(e) {
 }
 
 Parallax() {
-  const [moveX, moveY] = [(this.state.position.x / -100), (this.state.position.y / -120)];
+  const [moveX, moveY] = [(this.state.position.x / ""), (this.state.position.y / "")];
   //const [ocean, lemons] = [this.ocean.current, this.lemons.current];
   //ocean.style.transform = `translate3d(${moveX / .5}px, ${moveY}px, 0)`;
   //lemons.style.transform = `translate3d(${moveX / .2}px, ${moveY}px, 0)`;
@@ -56,15 +112,15 @@ render() {
             onClick={()=>this.handleClickLike()} 
             className={this.state.like?'active':'not-active'}>
             <i className="far fa-thumbs-up"></i>  
-            {this.state.like ? 101 : 100}
+            {this.state.like ? "" : ""}
           </button>
-          <button 
+          {/* <button 
             id="dislike" 
             onClick={()=>this.handleClickDislike()} 
             className={this.state.dislike?'active':'not-active'}>
             <i className="far fa-thumbs-down"></i>  
-            {this.state.dislike ? 26 : 25}
-          </button>
+            {this.state.dislike ? '' : ''}
+          </button> */}
         </div>
       </Content>
       <div className="imgs">
@@ -80,6 +136,7 @@ render() {
       </div>
   </div>
   </div>
+  
   )
 }
 }
@@ -87,10 +144,8 @@ render() {
 const Content = ({children}) =>
 <div className="content">
 <h1>Accessories</h1>
-  <p>
-  The lemon, Citrus limon Osbeck, is a species of small evergreen tree in the flowering plant family Rutaceae, native to South Asia, primarily North eastern India.</p>
+  <p>hello world</p>
 
-<p>The tree's ellipsoidal yellow fruit is used for culinary and non-culinary purposes throughout the world, primarily for its juice, which has both culinary and cleaning uses.[2] The pulp and rind are also used in cooking and baking. The juice of the lemon is about 5% to 6% citric acid, with a pH of around 2.2, giving it a sour taste. The distinctive sour taste of lemon juice makes it a key ingredient in drinks and foods such as lemonade and lemon meringue pie.</p>
   <div className="buttons">
     {children}
     <div className="nav">
@@ -108,6 +163,17 @@ const Content = ({children}) =>
 
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+  
 </div>
 
 export default SliderComponent;

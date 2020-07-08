@@ -15,8 +15,266 @@ class OfferPageComponent extends Component {
          
       
 <div className="OfferPageComponent">
+
+{/* <div class="pen-info">
+        <h1 class="pen-info__title">Meet the Team</h1>
+        <p class="pen-info__p">Hover to see the effect.</p>
+    </div> */}
+
+    <div class="demo">
+
+        <div class="demo__div people">
+            <div class="people__div people__div--img">
+                <img src={Acc10} alt="" class="people__img"/>
+            </div>
+            <div class="people__div people__div--info">
+                <h2 class="people__name">20$</h2>
+                <p class="people__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button className="card-button-add">Add To +</button>
+            </div>
+            <div class="people__div people__div--name">
+                <h2 class="people-name">A Necklace</h2>
+            </div>
+        </div>          
+
+        <div class="demo__div people">
+            <div class="people__div people__div--img">
+                <img src={Acc7} alt="" class="people__img"/>
+            </div>
+            <div class="people__div people__div--info">
+                <h2 class="people__name">20$</h2>
+                <p class="people__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button className="card-button-add">Add To +</button>
+            </div>
+            <div class="people__div people__div--name">
+                <h2 class="people-name">A Necklace</h2>
+            </div>
+        </div>       
+        
+        <div class="demo__div people">
+            <div class="people__div people__div--img">
+                <img src={Acc9} alt="" class="people__img"/>
+            </div>
+            <div class="people__div people__div--info">
+                <h2 class="people__name">20$</h2>
+                <p class="people__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button className="card-button-add">Add To +</button>
+            </div>
+            <div class="people__div people__div--name">
+                <h2 class="people-name">A Necklace</h2>
+            </div>
+        </div>         
+
+        <div class="demo__div people">
+            <div class="people__div people__div--img">
+                <img src={Acc7} alt="" class="people__img"/>
+            </div>
+            <div class="people__div people__div--info">
+                <h2 class="people__name">20$</h2>
+                <p class="people__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <button className="card-button-add">Add To +</button>
+            </div>
+            <div class="people__div people__div--name">
+                <h2 class="people-name">A Necklace</h2>
+            </div>
+        </div>          
+
+        <div class="demo__div people">
+            <div class="people__div people__div--img">
+                <img src={Acc2} alt="" class="people__img"/>
+            </div>
+            <div class="people__div people__div--info">
+                <h2 class="people__name">20$</h2>
+                <p class="people__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <button className="card-button-add">Add To +</button>
+            </div>
+            <div class="people__div people__div--name">
+                <h2 class="people-name">A Necklace</h2>
+            </div>
+        </div>           
+
+        <div class="demo__div people">
+            <div class="people__div people__div--img">
+                <img src={Acc3} alt="" class="people__img"/>
+            </div>
+            <div class="people__div people__div--info">
+                <h2 class="people__name">20$</h2>
+                <p class="people__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <button className="card-button-add">Add To +</button>
+            </div>
+            <div class="people__div people__div--name">
+                <h2 class="people-name">A Necklace</h2>
+            </div>
+        </div>  
+
+        <div class="demo__div people">
+            <div class="people__div people__div--img">
+                <img src={Acc10} alt="" class="people__img"/>
+            </div>
+            <div class="people__div people__div--info">
+                <h2 class="people__name">20$</h2>
+                <p class="people__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <button className="card-button-add">Add To +</button>
+            </div>
+            <div class="people__div people__div--name">
+                <h2 class="people-name">A Necklace</h2>
+            </div>
+        </div>          
+
+        <div class="demo__div people">
+            <div class="people__div people__div--img">
+                <img src={Acc9} alt="" class="people__img"/>
+            </div>
+            <div class="people__div people__div--info">
+                <h2 class="people__name">20$</h2>
+                <p class="people__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button className="card-button-add">Add To +</button>
+            </div>
+            <div class="people__div people__div--name">
+                <h2 class="people-name">A Necklace</h2>
+            </div>
+        </div>  
+        
+        <div class="demo__div people">
+            <div class="people__div people__div--img">
+                <img src={Acc7} alt="" class="people__img"/>
+            </div>
+            <div class="people__div people__div--info">
+                <h2 class="people__name">20$</h2>
+                <p class="people__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <button className="card-button-add">Add To +</button>
+            </div>
+            <div class="people__div people__div--name">
+                <h2 class="people-name">A Necklace</h2>
+            </div>
+        </div>          
+       
+
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       
-<div class="container-product">
+{/* <div class="container-product">
       
   <img src={Acc3} alt="Snow" style={{width:"100%"}}/>
   <Popup trigger={<button className="btn"> View Picture</button>}
@@ -123,7 +381,7 @@ class OfferPageComponent extends Component {
                        <button className="btn1">Buy This product</button>
                   </div>
                 </Popup>
-</div>
+</div> */}
 </div>
        
     )

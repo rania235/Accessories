@@ -1,35 +1,32 @@
-.OffersItemsComponent {
-  margin-bottom: 15px;
-  padding-top: 12px ;
-  padding-left: 12px;
+
+
+.addProducts--FormOffer {
+  background-color: rgb(66, 66, 102);
+}
+
+.dash-board-button {
  
-}
-
-.danger {
+  margin-left: 28%;
+  font-size: 20px;
   background-color: black;
-  border-left: 6px solid rgb(37, 37, 119);
-  height: 100px;
-  color: white;
+  color:white;
+  border-radius: 20px;
+  height: 40px;
+  width: 200px;
+  box-shadow: 5px 5px 5px 5px black;
+  
 }
 
-.success {
-  background-color: black;
-  border-left: 6px solid rgb(37, 37, 119);
-  height: 100px;
-  color: white;
+.offer-component {
+  padding-top: 20%;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+   grid-gap:20px;
+  background-color: grey;
+padding-bottom: 10px;
+   padding-left: 70%;
+   margin-right: 50%;
+   width: 400%;
 }
 
-.info {
-  background-color: black;
-  border-left: 6px solid rgb(37, 37, 119);
-  height: 100px;
-  color: white;
-}
-
-
-.warning {
-  background-color: black;
-  border-left: 6px solid rgb(37, 37, 119);
-  height: 100px;
-  color: white;
-}

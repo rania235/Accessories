@@ -1,58 +1,65 @@
 
-$lightGrey: #F2F2F2;
-$white: #FFFFFF;
-$blue: #1849AB;
 
-
-.Home {
-  background-color: $lightGrey;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  font-family: 'Arial';
-  justify-content: center;
-  padding-top: 5%;
+.card-Home-component {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background-color: white;
 }
-.button-products {
+.dash-board-button {
+ 
+  margin-left: 28%;
+  font-size: 20px;
+  background-color: black;
+  color:white;
+  border-radius: 20px;
   height: 40px;
-  width: 200%;
-  padding-top: -1px;
+  width: 200px;
+  box-shadow: 5px 5px 5px 5px black;
+  
+}
+
+// .Home-popup {
+//   margin-top: -140px;
+// }
+.price {
+  color: grey;
+  font-size: 22px;
+ 
+}
+.addProducts--Form {
+  background-color: rgb(66, 66, 102);
+}
+.Home-component {
+  padding-top: 20%;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+   grid-gap:20px;
+  background-color: grey;
+
+   padding-left: 70%;
+   margin-right: 50%;
+   width: 400%;
+
+}
+.card-Home-component button {
+  border: none;
+  outline: 0;
+  padding: 12px;
   color: white;
-  background-color: rgb(37, 37, 119) !important;
-}
-.cardsWrapper {
-  display: flex;
-}
-.Form-Productz {
-  background-color: rgb(37, 37, 119);
-}
-.card {
-  background-color: $white;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  margin: 1.5rem;
-  width: 300px;
-}
-
-.card-figure {
-  margin: 0;
-  min-height: 1px;
-}
-
-.card-image {
-  display: block;
-  max-width: 100%;
-}
-
-.card-block {
-  padding: 1rem 2rem 2rem;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  
 }
 
 
-.modal-outer.visible .modal-inner {
-  transform: translateY(0);
-}
-
-@media screen and (max-width:990px) {
-  .cardsWrapper { 
-    flex-wrap: wrap;  
-  }
+.card-Home-component button:hover {
+  opacity: 0.7;
+  
 }

@@ -20,7 +20,7 @@ class App extends Component{
  
     return (
       <>
-     {/*  <Login/> */}
+       <Login/> 
                <NavBarComponent />
               <Switch>
               <Route exact path="/" strict exact render={(props)=><HomePage/>} />
@@ -29,7 +29,7 @@ class App extends Component{
              <Route path="/about" strict exact render={(props)=><AboutUs/>}/>
              <Route path="/contact" strict exact render={(props)=><ContactUsComponent/>} />
               </Switch>
-              <Footer />  
+              <Footer />   
       </>
     );
     }

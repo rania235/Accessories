@@ -29,8 +29,10 @@ $border: #e5e5e5;
   overflow: hidden;
   padding: 40px;
   background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  border-radius: 15px;
+  border: 5px dashed #1abc9c;
+  box-shadow: #1abc9c 1px 5px 1px 5px;
+
  
   .product-box {
     width: 100%;

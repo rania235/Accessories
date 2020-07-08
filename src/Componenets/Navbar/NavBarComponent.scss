@@ -26,24 +26,24 @@
   font-family: 'Dancing Script', cursive;
 }
 
-ul {
+.menu-navbar-user {
   display: flex;
   list-style: none;
   font-family: 'Dancing Script', cursive;
 }
 
-ul li a {
+.menu-navbar-user .li-navbar a {
   text-decoration: none;
   padding: 1.7em;
   display: inline-block;
   transition: all .5s;
   position: relative;
   border-right: 1px solid #1abc9c;
-  font-family: 'Dancing Script', cursive;
-  font-size: 20px;
+  font-family:  cursive;
+  font-size: 25px;
 }
 
-ul li a::before {
+.menu-navbar-user .li-navbar a::before {
   content: '';
   position: absolute;
   bottom: 12px;
@@ -56,11 +56,11 @@ ul li a::before {
   transition: all .5s;
 }
 
-ul li a:hover::before {
+.menu-navbar-user .li-navbar a:hover::before {
   transform: scaleX(1);
 }
 
-ul li a:hover {
+.menu-navbar-user .li-navbar a:hover {
   background: #1abc9c;
 }
 
@@ -73,10 +73,10 @@ ul li a:hover {
 }
 
 @media (max-width:640px) {
-  ul li a {
+  .menu-navbar-user .li-navbar a {
       padding: .5em;
   }
-  ul li a::before {
+  .menu-navbar-user .li-navbar a::before {
       content: '';
       width: 0;
   }
