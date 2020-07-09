@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import './HomePage.scss';
-import SliderComponent from '../Componenets/Slider/SliderComponent';
-import ProductComponent from '../Componenets/product/ProductComponent';
-import axios from 'axios';
+import '../Componenets/product/ProductComponent.scss';  
 
 class HomePage extends Component {
   constructor(props){
@@ -14,40 +12,36 @@ class HomePage extends Component {
       data:[]
     }
   }
-  componentDidMount() {
-    //const { id } = this.props.match.params;
-    axios.get(`http://127.0.0.1:8000/api/products/`, {
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-    })
-        .then(res => {
-          console.log(res.data)
-            this.setState({ data:res.data.products });
-        })
-        .catch(err => {
-            console.log(err);
-        });;
-}
   
   render(){
     return(
-      <div className="HomePage">
+      <div className="HomePage">{this.state.data.length!=0?"":""}
          <h1  className="HomePagetitle">Welcome To Boutique Camelia</h1>
       <div className="ProductComponent">
     <div className="container33">
       <ul className="gallery">
-      {this.state.data.map((product,index)=>{
+      {this.props.data.map((product,index)=>{
         return(
-           <li key={index}className="gallery__item">
-          <ProductComponent  value={product} />
+           <li key={index} className="gallery__item">
+          <figure>
+                <div class="gallery__image">
+                    <img style={{width:'200px', height:'250px'}} src={`http://localhost:8000/assets/img/${product.image}`} alt="image" title="image" />
+                    <div class="gallery__btns">
+                <span >
+                  <button onClick={()=>this.props.SendID(product.id)} className="button-view">Buy Now</button>
+
+</span>
+                    </div>
+                </div>
+                
+            </figure>
           </li>
         )
       })}
       </ul>
       </div>
-      <SliderComponent/> 
+        )
+      })}
       </div>
       </div>
     );

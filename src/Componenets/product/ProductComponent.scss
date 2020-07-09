@@ -1,20 +1,18 @@
 
-.ProductComponent {
-    display: grid;
-    
-	//grid-template-columns: 1fr 1fr 1fr;
-}
 
 img {
     min-width: 100%;
     min-height: 100%;
 }
-.View {
-    color: black;
-    background-color: #1abc9c;
-    margin-left: 30%;
+
+
+.button-view{
+    color: white;
+    background-color: black;
+    margin-right: 100%;
     margin-top: 8%;
-    
+    width: 100%;
+    border: none;
 }
 .descrption {
     background-color: black;
@@ -33,11 +31,8 @@ img {
 
 // Gallery
 .gallery {
-	display: flex;
-    flex-wrap: wrap;
-    margin: 0 -10px;
-    padding: 24px 0;
-    
+    display:grid;
+   grid-template-columns: 1fr 1fr 1fr;   
   
 }
 
@@ -68,13 +63,17 @@ img {
 
 .gallery__image {
     position: relative;
-    border: 3px solid #1abc9c;
+    border: 4px solid #1abc9c;
     box-shadow: 10px 10px 10px 10px #1abc9c;
     border-radius: 1px;
     padding: 10px;
-    margin-top: -50px;
+    margin-top: -10px;
     transition: .3s ease-in-out;
-    height: 300px;
+    width: 80%;
+    margin-left: 10%;
+    
+   
+  
    
    
     
@@ -112,7 +111,6 @@ img {
             text-align: center;
             padding: 12px 40px;
             font-size: 12px;
-            color: white;
             text-transform: uppercase;
             letter-spacing: 0.14rem;
             border: 1px solid white;

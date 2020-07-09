@@ -1,0 +1,59 @@
+
+
+
+
+ .View-Component {
+  font-family: Arial;
+  font-size: 17px;
+  padding-top: 50px;
+  background-color: rgba(56, 109, 91, 0.87);
+} 
+
+/* .container-ViewProduct {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+} */
+.description-view {
+text-align: center;
+margin-top: 5%;
+width: 70%;
+padding-left: 400px;
+font-size: large;
+color: white;
+}
+.image-view {
+  height: 350px;
+  width: 50px;
+ 
+}
+.comments-button {
+  display: flex;
+  margin-left: 35%;
+  margin-top: 100px;
+  padding-bottom: 150px;
+  color: #1abc9c;
+}
+.comments {
+  color: #1abc9c;
+  background-color: black;
+  border-radius: 250px;
+}
+
+
+/* .container-ViewProduct {vertical-align: middle;} */
+
+.container-ViewProduct .content-ViewProduct {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#like {
+  color: blue;
+ 
+}

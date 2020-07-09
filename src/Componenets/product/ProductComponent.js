@@ -6,7 +6,7 @@ import Acc9 from '../../Images/acc9.jpg';
 import Acc7 from '../../Images/acc7.jpg';
 import Acc2 from '../../Images/acc7.jpg';
 //import Acc3 from '../../Images/acc7.jpg';
-import Popup from "reactjs-popup";
+//import Popup from "reactjs-popup";
 
 
 
@@ -20,12 +20,12 @@ render(){
             <>
             <figure>
                 <div class="gallery__image">
-                    <img src={Acc10} alt="image" title="image" />
+                    <img style={{width:'200px', height:'250px'}} src={Acc10} alt="image" title="image" />
                     <div class="gallery__btns">
-                        <a href={Acc10} data-fancybox="gallery" data-caption="Caption for single image 1">view Picture</a>
-                        <a href="#!">buy now</a>
+                       {/*  <a href={Acc10} data-fancybox="gallery" data-caption="Caption for single image 1">view Picture</a> */}
+                        {/* <a href="/view-product">buy now</a> */}
                     </div>
-                    <Popup trigger={<button className="View"> {this.props.value.name}</button>}
+                    {/* <Popup trigger={<button className="View"> {this.props.value.name}</button>}
                      modal
                      closeOnDocumentClick
                       >
@@ -33,7 +33,7 @@ render(){
                     <p> sdfasd</p>
                     <p>{this.props.value.description}</p>
                   </div>
-                </Popup>
+                </Popup> */}
                 </div>
                 
             </figure>

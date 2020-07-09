@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import './Login.scss';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 
 class Login extends Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state={
       username:"",
       email:"",
@@ -44,8 +45,10 @@ axios.post('http://127.0.0.1:8000/api/user/register',  {
 },{
   headers:{'Content-Type': 'application/json',}
 }).then((res)=>{
-  console.log(res.data)
-}).catch(err=>console.log(err))
+  localStorage.setItem('token', res.data.access_token)
+  localStorage.setItem('id', res.data.id)
+  this.props.history.push(`/`);
+  }).catch(err=>console.log(err))
 }
 
 
@@ -57,20 +60,14 @@ onLogin = (e)=>{
     email:this.state.email,
     password:this.state.password
   }).then((res)=>{
-    console.log(res.data.token)
+    if(!localStorage.getItem('token')&&!localStorage.getItem('id')){
+    localStorage.setItem('token', res.data.access_token);
+    localStorage.setItem('id', res.data.id);
+    this.props.history.push(`/`);
+    }
   })
   }
 
-
-  onLogout = (e)=>{
-    e.preventDefault();
-    axios.post('http://127.0.0.1:8000/api/user/logout', {
-      email:this.state.email,
-      password:this.state.password
-    }).then((res)=>{
-      console.log(res.data)
-    })
-    }
 
   switchRight = () =>{
       this.setState({
@@ -89,7 +86,7 @@ render(){
 		<div className="Login--body">
        <div className={`container-style container ${this.state.containerClass}`} id="container-style">
   <div class="form-container sign-up-container">
-    <form action="#">
+    <form onSubmit = {this.onRegister}>
       <h1 className="Create-Account">Create Account</h1>
       <div className="social-container">
         <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
@@ -100,11 +97,11 @@ render(){
       <input type="text" value={this.state.username} onChange={e=>this.changeUserName(e)} placeholder="Name" className="input" />
       <input type="email" value={this.state.email} onChange={e=>this.changeEmail(e)} placeholder="Email" className="input"/>
       <input type="password" value={this.state.password} onChange={e=>this.changePassword(e)} placeholder="Password" className="input" />
-      <button type="submit" onClick = {this.onRegister}className="ghost-login">Sign Up</button>
+      <button type="submit" className="ghost-login">Sign Up</button>
     </form>
   </div>
   <div className="form-container sign-in-container">
-    <form action="#">
+    <form onSubmit = {this.onLogin}>
       <h1 className="Create-Account">Sign in</h1>
       <div className="social-container">
         <a href="#" class="social"><i className="fab fa-facebook-f"></i></a>
@@ -115,7 +112,7 @@ render(){
       <input type="email" value= {this.state.email} onChange={e=>this.onChangeEmailLogIn(e)} placeholder="Email"  className="input"/>
       <input type="password" value = {this.state.password} onChange={e=>this.onChangePasswordLogIn(e)} placeholder="Password"className="input" />
       <a href="#" className="forgot-password">Forgot your password?</a>
-      <button type="submit" onSubmit = {this.onLogin}className="ghost-login">Sign In</button>
+      <button type="submit" className="ghost-login">Sign In</button>
     </form>
   </div>
   <div className="overlay-container">
@@ -140,4 +137,4 @@ render(){
 
 }
 
-export default Login;
+export default withRouter(Login);

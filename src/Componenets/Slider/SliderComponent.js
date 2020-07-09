@@ -10,7 +10,6 @@ class SliderComponent extends React.Component {
      super(props)
      this.state={
       like: true,
-      dislike: false,
       position: {x: 0, y: 0},
       name:'',
       description:'',
@@ -127,7 +126,7 @@ render() {
         <img 
           ref={this.ocean} 
           className="ocean"
-          src={Acc9}
+          // src={this.}
           alt="see"
           width="100%"
           height="100%"
