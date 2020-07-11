@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './HomePage.scss';
-import '../Componenets/product/ProductComponent.scss';  
+import '../Componenets/Product/ProductComponent.scss';  
 
 class HomePage extends Component {
   constructor(props){
@@ -28,7 +28,7 @@ class HomePage extends Component {
                     <img style={{width:'200px', height:'250px'}} src={`http://localhost:8000/assets/img/${product.image}`} alt="image" title="image" />
                     <div class="gallery__btns">
                 <span >
-                  <button onClick={()=>this.props.SendID(product.id)} className="button-view">Buy Now</button>
+                  <button onClick={()=>this.props.SendID(product.id)} className="button-view">View Details</button>
 
 </span>
                     </div>

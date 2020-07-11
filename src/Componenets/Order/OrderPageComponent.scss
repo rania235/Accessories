@@ -9,7 +9,7 @@ $border: #e5e5e5;
 	padding-bottom: 5%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-  background-image: url("https://cdn.hipwallpaper.com/i/63/90/qZAfaO.jpg");
+  background-color: rgba(56, 109, 91, 0.87);
 
 	
 }
@@ -21,10 +21,14 @@ $border: #e5e5e5;
 	font-weight:800;
   font-size:50px;
 }
-
+.image-order {
+  width: 10px;
+  height: 100px;
+}
 #app {
   box-sizing: border-box;
   width: 300px;
+  height: 100%;
   margin: 0 auto;
   overflow: hidden;
   padding: 40px;

@@ -17,7 +17,8 @@ class App extends Component{
     super(props)
     this.state={
       data:[],
-      id:-1
+      id:-1,
+      order:[]
     }
   }
   componentDidMount() {
@@ -38,19 +39,33 @@ class App extends Component{
   SendID=(id)=>{
       this.props.history.push(`/view-product/${id}`);
   }
+  OrederID=(id)=>{
+  let a=this.state.order;
+  a.push(id);
+  this.setState({order:a})
+
+  }
+
+  addOrder=(id)=>{
+    let b=this.state.order;
+    b.push(id);
+    this.setState({order:b})
+  
+    }
+
   render() {
  
     return (
       <React.Fragment>
         <NavBarComponent />
         <Switch>
-          <Route exact path="/" strict exact render={() => <HomePage data={this.state.data} SendID={this.SendID}/>} />
-          <Route path="/offer" strict exact render={(props)=><OfferPageComponent/>}/>
+          <Route exact path="/" strict exact render={() => <HomePage data={this.state.data} SendID={this.SendID} />} />
+          <Route path="/offer" strict exact render={(props)=><OfferPageComponent data={this.state.data} addOrder={this.addOrder}/>}/>
           <Route path="/login"  render={() => <Login/>} />
-          <Route path="/order" strict exact render={(props)=><OrderPageComponent/>}/>
+          <Route path="/order" strict exact render={(props)=><OrderPageComponent order={this.state.order} />}/>
           <Route path="/about" strict exact render={(props)=><AboutUs/>}/>
           <Route path="/contact" strict exact render={(props)=><ContactUsComponent/>} />
-          <Route path="/view-product/:id" strict exact render={props => <ViewProduct {...props}/>} />
+          <Route path="/view-product/:id" strict exact render={props => <ViewProduct {...props} OrederID={this.OrederID}/> } />
         </Switch>
         <Footer /> 
       </React.Fragment> 

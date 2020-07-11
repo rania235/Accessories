@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './OfferPageComponent.scss';
-import Acc10 from '../../Images/acc10.jpg';
+//import Acc10 from '../../Images/acc10.jpg';
+//import axios from 'axios';
+
 
 class OfferPageComponent extends Component {
     constructor(props){
@@ -12,262 +14,50 @@ class OfferPageComponent extends Component {
           data:[],
           start_date:'',
           end_date:'',
-          image:''
+          image:'',
+          offer:[],
+          offerID:''
         }
       }
+
+componentDidMount(){
+let a= this.props.data.filter(value => value.start_date != 'NULL');
+this.setState({offer:a})
+}
+
+addOrderTest=()=>{
+  this.props.addOrder(this.state.data);
+  this.props.history.push("/order");
+
+}
+
   render(){
     return( 
-         
-      
 <div className="OfferPageComponent">
-    <div class="demo">
+   
+          {this.state.offer.map(value=>{
+            return(
+        <div class="demo">
 
-        <div class="demo__div people">
-            <div class="people__div people__div--img">
-                <img src={Acc10} alt="" class="people__img"/>
-            </div>
-            <div class="people__div people__div--info">
-                <h2 class="people__name">20$</h2>
-                <p class="people__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <button className="card-button-add">Add To +</button>
-            </div>
-            <div class="people__div people__div--name">
-                <h2 class="people-name">A Necklace</h2>
-            </div>
-        </div>          
+<div class="demo__div people">
+<div class="people__div people__div--img">
 
-        
-    </div>
+<img src={`http://localhost:8000/assets/img/${value.image}`} alt="" class="people__img"/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-{/* <div class="container-product">
-      
-  <img src={Acc3} alt="Snow" style={{width:"100%"}}/>
-  <Popup trigger={<button className="btn"> View Picture</button>}
-                     modal
-                     closeOnDocumentClick
-                      >
-                 <div className="descrption">
-                    <p className="descrption1">Price:20$</p>
-                    <p>NewPrice:10$</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                       Lorem Ipsum has been the industry's standard dummy text ever since the 
-                       1500s, when an unknown printer took a galley of type and scrambled it
-                       to make a type specimen book.</p>
-                       <button className="btn1">Buy This product</button>
-                  </div>
-                </Popup>
 </div>
+<div class="people__div people__div--info">
+  <h2 class="people__name">{value.price}</h2>
+  <p class="people__desc">{value.description}</p>
+  <button className="card-button-add" onClick={()=>this.addOrderTest()}>Add To Order</button>
 
-<div class="container-product">
-  <img src={Acc5} alt="Snow" style={{width:"100%"}}/>
-  <Popup trigger={<button className="btn"> View Picture</button>}
-                     modal
-                     closeOnDocumentClick
-                      >
-                 <div className="descrption">
-                 <p className="descrption1">Price:20$</p>
-                    <p>NewPrice:10$</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                       Lorem Ipsum has been the industry's standard dummy text ever since the 
-                       1500s, when an unknown printer took a galley of type and scrambled it
-                       to make a type specimen book.</p>
-                       <button className="btn1">Buy This product</button>
-                  </div>
-                </Popup>
 </div>
-
-<div class="container-product">
-  <img src={Acc9} alt="Snow" style={{width:"100%"}}/>
-  <Popup trigger={<button className="btn"> View Picture</button>}
-                     modal
-                     closeOnDocumentClick
-                      >
-                 <div className="descrption">
-                 <p className="descrption1">Price:20$</p>
-                    <p>NewPrice:10$</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                       Lorem Ipsum has been the industry's standard dummy text ever since the 
-                       1500s, when an unknown printer took a galley of type and scrambled it
-                       to make a type specimen book.</p>
-                       <button className="btn1">Buy This product</button>
-                  </div>
-                </Popup>
+<div class="people__div people__div--name">
+  <h2 class="people-name">{value.name}</h2>
 </div>
-
-<div class="container-product">
-  <img src={Acc7} alt="Snow" style={{width:"100%"}}/>
-  <Popup trigger={<button className="btn"> View Picture</button>}
-                     modal
-                     closeOnDocumentClick
-                      >
-                 <div className="descrption">
-                 <p className="descrption1">Price:20$</p>
-                    <p>NewPrice:10$</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                       Lorem Ipsum has been the industry's standard dummy text ever since the 
-                       1500s, when an unknown printer took a galley of type and scrambled it
-                       to make a type specimen book.</p>
-                       <button className="btn1">Buy This product</button>
-                  </div>
-                </Popup>
 </div>
-
-<div class="container-product">
-  <img src={Acc10} alt="Snow" style={{width:"100%"}}/>
-  <Popup trigger={<button className="btn"> View Picture</button>}
-                     modal
-                     closeOnDocumentClick
-                      >
-                 <div className="descrption">
-                 <p className="descrption1">Price:20$</p>
-                    <p>NewPrice:10$</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                       Lorem Ipsum has been the industry's standard dummy text ever since the 
-                       1500s, when an unknown printer took a galley of type and scrambled it
-                       to make a type specimen book.</p>
-                       <button className="btn1">Buy This product</button>
-                  </div>
-                </Popup>
 </div>
-
-<div class="container-product">
-  <img src={Acc2} alt="Snow" style={{width:"100%"}}/>
- <Popup trigger={<button className="btn"> View Picture</button>}
-                     modal
-                     closeOnDocumentClick
-                      >
-                 <div className="descrption">
-                 <p className="descrption1">Price:20$</p>
-                    <p>NewPrice:10$</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                       Lorem Ipsum has been the industry's standard dummy text ever since the 
-                       1500s, when an unknown printer took a galley of type and scrambled it
-                       to make a type specimen book.</p>
-                       <button className="btn1">Buy This product</button>
-                  </div>
-                </Popup>
-</div> */}
+            )
+          })}
 </div>
        
     )

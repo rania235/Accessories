@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './ViewProduct.scss';
-import image from '../../Images/acc1.jpg';
+//import image from '../../Images/acc1.jpg';
 import axios from 'axios';
+//import { Redirect } from "react-router-dom";
+
 
 
 
@@ -56,20 +58,7 @@ componentDidMount() {
 
 
 }
-// formView=()=>{console.log("hey")
-//   let a= this.props.data.filter(value =>
-//     value.id ==this.props.id )
-//     console.log("filter",a)
-  
-//   /*   <div className="container-ViewProduct">
-//     <img src={this.state.image} alt="Notebook"/>
-//     <div className="content-ViewProduct">
-//       <h1 className="ViewProduct-text">{value.name}</h1>
-//       <p className="ViewProduct-text">{value.description}</p>
-//     </div>
-//   </div> */
-  
-// }
+
 changeCommentText = (e) => {
   e.preventDefault()
   this.setState({
@@ -82,7 +71,7 @@ changeCommentText = (e) => {
       like: !this.state.like,
     });
   }
-
+  
   handleComment=()=>{
     const id = localStorage.getItem('id')
     const token = localStorage.getItem('token')
@@ -98,6 +87,29 @@ changeCommentText = (e) => {
     commentText:""
   })
 })
+  }
+
+
+  handleClickLike=()=>{
+    const id = localStorage.getItem('id')
+    const token = localStorage.getItem('token')
+    console.log(id);
+    axios.post(`http://127.0.0.1:8000/api/userLike`, {
+      like: this.state.like,
+      user_id: id,
+      product_id:this.props.match.params.id
+},{headers:{
+  'Authorization': 'Bearer ' + token
+}}).then((res)=>{
+  this.setState({
+    like:""
+  })
+})
+  }
+  test=()=>{
+    this.props.OrederID(this.state.data);
+    this.props.history.push("/order");
+
   }
   render(){
 return(
@@ -117,15 +129,16 @@ return(
 <button 
               id="like" 
               onClick={()=>this.handleClickLike()} 
-              className={this.state.like?'active':'not-active'}>
+              className={this.state.like}>
               <i className="far fa-thumbs-up"></i>  
               {this.state.like ? 26 : 25}
             </button>
           
             <input type="text" value={this.state.commentText} onChange={(e)=>this.changeCommentText(e)} placeholder="comments"></input>
            <button className="btn btn-primary" className="comments" onClick={this.handleComment}>Comment</button>
-
-
+           <div className="button-buy">
+           <button onClick={()=>this.test()}>Buy This Product</button>
+           </div>
 </div>
   </div>
   </ div>
