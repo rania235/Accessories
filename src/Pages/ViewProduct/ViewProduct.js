@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './ViewProduct.scss';
 //import image from '../../Images/acc1.jpg';
 import axios from 'axios';
+import { Redirect, withRouter } from 'react-router-dom';
 //import { Redirect } from "react-router-dom";
 
 
@@ -47,7 +48,6 @@ componentDidMount() {
         this.setState({ 
           data:res.data.product,
         },()=>{
-          console.log("I am here");
         });
        
         
@@ -107,9 +107,9 @@ changeCommentText = (e) => {
 })
   }
   test=()=>{
+    console.log("hon", this.state.data)
     this.props.OrederID(this.state.data);
     this.props.history.push("/order");
-
   }
   render(){
 return(
@@ -147,4 +147,4 @@ return(
   
 }
 
-export default ViewProduct;
+export default withRouter(ViewProduct);

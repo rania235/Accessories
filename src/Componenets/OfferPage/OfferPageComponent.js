@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import './OfferPageComponent.scss';
+import {withRouter} from "react-router-dom";
+import Order from '../Order/OrderPageComponent';
+import {BrowserRouter as Router,Route,
+  Redirect,Switch} from 'react-router-dom';
 //import Acc10 from '../../Images/acc10.jpg';
 //import axios from 'axios';
 
 
-class OfferPageComponent extends Component {
+class OfferPageComponent extends React.Component {
     constructor(props){
         super(props)
         this.state={
@@ -25,18 +29,17 @@ let a= this.props.data.filter(value => value.start_date != 'NULL');
 this.setState({offer:a})
 }
 
-addOrderTest=()=>{
-  this.props.addOrder(this.state.data);
-  this.props.history.push("/order");
-
+addOrder=(value)=>{
+this.props.addOrderTest(value);
+this.props.history.push("/order");
 }
 
   render(){
     return( 
 <div className="OfferPageComponent">
    
-          {this.state.offer.map(value=>{
-            return(
+          {this.state.offer.map(value=>(value.start_date==null?"":
+            
         <div class="demo">
 
 <div class="demo__div people">
@@ -48,7 +51,7 @@ addOrderTest=()=>{
 <div class="people__div people__div--info">
   <h2 class="people__name">{value.price}</h2>
   <p class="people__desc">{value.description}</p>
-  <button className="card-button-add" onClick={()=>this.addOrderTest()}>Add To Order</button>
+  <button className="card-button-add" onClick={()=>this.addOrder()}>Add To Order</button>
 
 </div>
 <div class="people__div people__div--name">
@@ -57,11 +60,11 @@ addOrderTest=()=>{
 </div>
 </div>
             )
-          })}
+         )}
 </div>
        
     )
   }
 }
 
-export default OfferPageComponent;
+export default withRouter(OfferPageComponent);

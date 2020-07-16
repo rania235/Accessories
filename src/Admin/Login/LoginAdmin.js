@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './LoginAdmin.scss';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 
-export default class LoginAdmin extends Component {
+ class LoginAdmin extends Component {
   constructor(props){
     super(props)
      this.state={
@@ -20,12 +22,30 @@ export default class LoginAdmin extends Component {
     e.preventDefault();
     this.setState({password:e.target.value})
   }
+
+  login = (e) => {
+    e.preventDefault();
+    const url = "http://127.0.0.1:8000/api/admin/login";
+    const body = {
+      email:this.state.email,
+      password:this.state.password
+    }
+    axios.post(url,body)
+            .then ((response) => {
+              localStorage.setItem('Admin-token', response.data.access_token)
+              this.props.history.push(`/admin/home`);
+            });
+}
+
+
+
+
 render(){
   return(
     <div className="LoginAdmin">
     <div className="login-box">
   <h2>Login</h2>
-  <form className="LoginAdmin-form">
+  <form className="LoginAdmin-form" onSubmit={this.onRegister}>
     <div className="user-box">
       <input type="text" name="" required="" value={this.state.email} onChange={e=>this.changeEmail(e)}/>
       <label>Email</label>
@@ -39,7 +59,7 @@ render(){
       <span></span>
       <span></span>
       <span></span>
-     <button className="Login-Admin" type="submit" onClick = {this.onRegister}>Login</button> 
+     <button className="Login-Admin" type="submit" onClick = {(e)=>this.login(e)}>Login</button> 
     </a>
   </form>
 </div>
@@ -49,3 +69,5 @@ render(){
   )
 }
 }
+
+export default withRouter(LoginAdmin)

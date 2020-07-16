@@ -6,27 +6,40 @@ import Home from './Homedashboard/Home';
 import OffersItemsComponent from './Offers/OffersItemsComponent';
 import UserComponent from './User/UserComponent';
 import AdminComponent from './Admins/AdminComponent';
-import Login from './Login/LoginAdmin';
+import  AdminLogin from './Login/LoginAdmin';
 
 
 
 class Dashboard extends Component {
   constructor(props){
     super(props)
+    this.state={
+      data:[],
+    }
   }
+
+
+//   addProducts=(id)=>{
+//     let b=this.state.product;
+//     b.push(id);
+//     this.setState({product:b})
+// }  
+
   render() {
     return (
           
-         <div style={{display:"grid",gridTemplateColumns:"1fr 4fr"}}>
-<Login/>
- {/* <DashboardNavbar/>
-            <Switch>
-         <Route strict exact path="/admin/home" render={()=><Home/>} />
-         <Route strict  path="/admin/items" render={()=><OffersItemsComponent/>} />
-         <Route strict  path="/admin/user" render={()=><UserComponent/>} />
-         <Route strict  path="/admin/component" render={()=><AdminComponent/>} />
-         </Switch> 
- */}
+         <div>
+
+            <DashboardNavbar/>
+            <Route strict exact path="/admin/login"  render={(props)=>< AdminLogin/>}/>
+            
+            <Route path="/admin/home" strict exact render={(props)=><Home data={this.state.data}/>}/>
+
+            <Route strict  path="/admin/items" render={()=><OffersItemsComponent/>} />
+
+            <Route strict  path="/admin/user" render={()=><UserComponent/>} />
+
+            <Route strict  path="/admin/component" render={()=><AdminComponent/>} />
          </div>          
     );
   }

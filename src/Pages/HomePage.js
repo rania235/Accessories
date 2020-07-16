@@ -21,6 +21,7 @@ class HomePage extends Component {
     <div className="container33">
       <ul className="gallery">
       {this.props.data.map((product,index)=>{
+        console.log('image',product)
         return(
            <li key={index} className="gallery__item">
           <figure>

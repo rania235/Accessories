@@ -7,12 +7,26 @@ $border: #e5e5e5;
 .OrderPageComponent {
 	padding-top: 5%;
 	padding-bottom: 5%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-  background-color: rgba(56, 109, 91, 0.87);
-
-	
+	display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: rgba(56, 109, 91, 0.87);	
 }
+.button-send-order {
+   margin-top:40px ;
+   margin-left: 40%;
+  // margin-bottom: -100px;
+  width: 170px;
+  height: 55px;
+  font-size: 20px;
+  color: #1abc9c;
+}
+.OrderPageDiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 
 .OrderPageComponent-h1 {
 	color: #1abc9c;
@@ -36,6 +50,7 @@ $border: #e5e5e5;
   border-radius: 15px;
   border: 5px dashed #1abc9c;
   box-shadow: #1abc9c 1px 5px 1px 5px;
+  margin-bottom: 20px;
 
  
   .product-box {

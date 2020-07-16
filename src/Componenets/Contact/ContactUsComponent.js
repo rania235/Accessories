@@ -6,7 +6,22 @@ import './ContactUsComponent.scss';
 
 
 class ContactUsComponent extends Component {
-  
+
+
+  changeFirstName = e => {
+    e.preventDefault();
+    this.setState({userfirstname:e.target.value})
+  }
+
+  changeLastName = e => {
+    e.preventDefault();
+    this.setState({userlastname:e.target.value})
+  }
+
+  changeMessage = e=>{
+    e.preventDefault();
+    this.setState({usermessage:e.target.value})
+  }
 
   render(){
     return(
@@ -29,15 +44,17 @@ class ContactUsComponent extends Component {
   </div>
 </div>
 <div className="contact">
+  <form action="https://formspree.io/xbjzdjkp" method="POST" className="contact-form-component">
    <label for="fname" className="contact-form-text">First Name</label>
-    <input type="text" id="fname" name="firstname"className="firsname-input"/>
+    <input type="text" id="fname" name="firstname"className="firsname-input" value={this.userfirstname} onChange={e=>this.changeFirstName(e)}/>
 
     <label for="fname" className="contact-form-text">Last Name</label>
-    <input type="text" id="fname" name="firstname"className="firsname-input"/>
+    <input type="text" id="fname" name="firstname"className="firsname-input" value={this.userlastname} onChange={e=>this.changeLastName(e)}/>
 
     <label for="fname" className="contact-form-text"> Your Message</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style={{height:"200px", color:"black"}} className="textarea"></textarea>
-    <button  className="butn">Send</button>
+    <textarea id="subject" name="subject" placeholder="Write something.." style={{height:"200px", color:"black"}} className="textarea" value={this.usermessage} onChange={e=>this.changeMessage(e)}></textarea>
+    <button  className="butn" >Send</button>
+    </form>
 </div>
 </div>
 
