@@ -31,11 +31,30 @@ test=()=>{
       console.log("this is an error",err);
   });
 }
+
+deleteOrder = (orderId) => {
+  axios.delete(`http://127.0.0.1:8000/api/orders/${orderId}`, {
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization':`Bearer ${localStorage.getItem('token')}`
+    }
+})
+  .then(res => {
+    console.log("resss",res.data.order)
+    if(res.status==200){
+      this.setState({orderProduct: this.state.orderProduct.filter(order => order.id !== orderId)})
+    }
+  })
+  .catch(err => {
+
+      console.log("this is an error",err);
+  });
+}
 componentDidMount(){
   console.log("order",localStorage.getItem('id'));
  this.test();
 }
-// ${this.props.match.params.id}
 
   render(){
    
@@ -43,7 +62,8 @@ componentDidMount(){
       
   <div className="OrderPageComponent">
     <div className="OrderPageDiv">
-{this.state.orderProduct.map((data,index)=>{
+{this.state.orderProduct.map((data,index)=>{ 
+{/* {this.props.order.map((data,index)=>{ */}
   console.log(data)
   return(
   <div id="app">
@@ -57,7 +77,10 @@ componentDidMount(){
     </li>
   </ul>
   
-  <button >Delete</button>
+  <button onClick={(event)=> {
+    event.preventDefault();
+    this.deleteOrder(data.id)
+  }}>Delete</button>
   
   
 </div>

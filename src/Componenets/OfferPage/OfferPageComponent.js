@@ -2,10 +2,8 @@ import React, {Component} from 'react';
 import './OfferPageComponent.scss';
 import {withRouter} from "react-router-dom";
 import Order from '../Order/OrderPageComponent';
-import {BrowserRouter as Router,Route,
-  Redirect,Switch} from 'react-router-dom';
-//import Acc10 from '../../Images/acc10.jpg';
-//import axios from 'axios';
+import {BrowserRouter as Router,Route,Redirect,Switch} from 'react-router-dom';
+
 
 
 class OfferPageComponent extends React.Component {
@@ -33,6 +31,10 @@ addOrder=(value)=>{
 this.props.addOrderTest(value);
 this.props.history.push("/order");
 }
+test=(value)=>{
+  this.props.OrederID(value);
+  this.props.history.push("/order");
+}
 
   render(){
     return( 
@@ -51,7 +53,7 @@ this.props.history.push("/order");
 <div class="people__div people__div--info">
   <h2 class="people__name">{value.price}</h2>
   <p class="people__desc">{value.description}</p>
-  <button className="card-button-add" onClick={()=>this.addOrder()}>Add To Order</button>
+  <button className="card-button-add" onClick={()=>this.test(value)}>Add To Order</button>
 
 </div>
 <div class="people__div people__div--name">

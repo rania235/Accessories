@@ -44,7 +44,6 @@ componentDidMount() {
     }
 })
     .then(res => {
-      console.log(res.data.product);
         this.setState({ 
           data:res.data.product,
         },()=>{
@@ -107,7 +106,6 @@ changeCommentText = (e) => {
 })
   }
   test=()=>{
-    console.log("hon", this.state.data)
     this.props.OrederID(this.state.data);
     this.props.history.push("/order");
   }

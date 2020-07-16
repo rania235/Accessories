@@ -13,14 +13,6 @@ import axios from 'axios';
 import Login from './Pages/Login';
 
 
-import AdminLogin from './Admin/Login/LoginAdmin'
-import Home from './Admin/Homedashboard/Home';
-import OffersItemsComponent from './Admin/Offers/OffersItemsComponent';
-import UserComponent from './Admin/User/UserComponent';
-import AdminComponent from './Admin/Admins/AdminComponent';
-//import DashboardNavbar from './Admin/DashboardNavbar/DashboardNavbar'
-
-
 class App extends Component{
   constructor(props){
     super(props)
@@ -48,14 +40,15 @@ class App extends Component{
   SendID=(id)=>{
       this.props.history.push(`/view-product/${id}`);
   }
-  OrederID=(id)=>{console.log("hello orderid")
+  OrederID=(id)=>{console.log("orderid",id)
   let a=this.state.order;
   a.push(id);
    let body={
     user_id:localStorage.getItem('id'),
     delivered:false,
-    total:100,
-    id_orders:7
+    id_orders:7,
+    price:id.price,
+    image:id.image
   } 
   axios.post('http://127.0.0.1:8000/api/orders/',body,{
     headers:{
@@ -64,9 +57,9 @@ class App extends Component{
       'Authorization':'Bearer '+localStorage.getItem('token')
     }
   }).then((res)=>{
-    console.log("ress",res)
+    console.log("ZeinaBBB",res)
   }).catch((error)=>{
-    console.log(error);
+    console.log("ERRRORR",error);
   });
  
   }
@@ -84,7 +77,7 @@ class App extends Component{
         <NavBarComponent />
         <Switch>
           <Route exact path="/" strict exact render={() => <HomePage data={this.state.data} SendID={this.SendID} />} />
-          <Route path="/offer" strict exact render={(props)=><OfferPageComponent data={this.state.data} addOrderTest={this.addOrderTest}/>}/>
+          <Route path="/offer" strict exact render={(props)=><OfferPageComponent data={this.state.data} OrederID={this.OrederID}/>}/>
           <Route path="/login"  render={() => <Login/>} />
           <Route path="/order" strict exact render={(props)=><OrderPageComponent order={this.state.order} />}/>
           <Route path="/about" strict exact render={(props)=><AboutUs/>}/>
