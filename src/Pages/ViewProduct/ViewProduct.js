@@ -106,6 +106,7 @@ changeCommentText = (e) => {
 })
   }
   test=()=>{
+    debugger;
     this.props.OrederID(this.state.data);
     this.props.history.push("/order");
   }

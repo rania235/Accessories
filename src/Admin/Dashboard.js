@@ -19,11 +19,7 @@ class Dashboard extends Component {
   }
 
 
-//   addProducts=(id)=>{
-//     let b=this.state.product;
-//     b.push(id);
-//     this.setState({product:b})
-// }  
+ 
 
   render() {
     return (
@@ -35,7 +31,7 @@ class Dashboard extends Component {
             
             <Route path="/admin/home" strict exact render={(props)=><Home data={this.state.data}/>}/>
 
-            <Route strict  path="/admin/items" render={()=><OffersItemsComponent/>} />
+            <Route strict  path="/admin/items" render={(props)=><OffersItemsComponent data={this.state.data}/>}/>} />
 
             <Route strict  path="/admin/user" render={()=><UserComponent/>} />
 
