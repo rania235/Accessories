@@ -53,6 +53,7 @@ test=(value)=>{
 <div class="people__div people__div--info">
   <h2 class="people__name">{value.price}</h2>
   <p class="people__desc">{value.description}</p>
+  <p class="people__desc">{value.start_date}_{value.end_date}</p>
   <button className="card-button-add" onClick={()=>this.test(value)}>Add To Order</button>
 
 </div>

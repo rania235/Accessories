@@ -11,6 +11,8 @@ class Login extends Component {
       username:"",
       email:"",
       password:"",
+      address:"",
+      phoneNumber:"",
       containerClass:""
     }
   }
@@ -30,6 +32,14 @@ onChangeEmailLogIn = e => {
   e.preventDefault();
   this.setState({email:e.target.value})
 }
+changeaddress = e =>{
+  e.preventDefault();
+  this.setState({address:e.target.value})
+}
+changephoneNumber = e =>{
+  e.preventDefault();
+  this.setState({phoneNumber:e.target.value})
+}
 onChangePasswordLogIn = e => {
   e.preventDefault();
   this.setState({password:e.target.value})
@@ -41,7 +51,9 @@ console.log('here')
 axios.post('http://127.0.0.1:8000/api/user/register',  {
   name:this.state.username,
   email:this.state.email,
-  password:this.state.password
+  password:this.state.password,
+  address:this.state.address,
+  phone_number:this.state.phoneNumber
 },{
   headers:{'Content-Type': 'application/json',}
 }).then((res)=>{
@@ -94,9 +106,18 @@ render(){
         <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
       </div>
       <span>or use your email for registration</span>
+
       <input type="text" value={this.state.username} onChange={e=>this.changeUserName(e)} placeholder="Name" className="input" />
+
       <input type="email" value={this.state.email} onChange={e=>this.changeEmail(e)} placeholder="Email" className="input"/>
+
+    
       <input type="password" value={this.state.password} onChange={e=>this.changePassword(e)} placeholder="Password" className="input" />
+
+      <input type="address" value={this.state.address} onChange={e=>this.changeaddress(e)} placeholder="address" className="input"/>
+
+      <input type="phonenumber" value={this.state.phoneNumber} onChange={e=>this.changephoneNumber(e)} placeholder="phoneNumber" className="input"/>
+
       <button type="submit" className="ghost-login">Sign Up</button>
     </form>
   </div>
@@ -122,7 +143,7 @@ render(){
         <button className="ghost-login" id="signIn" onClick={this.switchLeft}>Sign In</button>
       </div>
       <div className="overlay-panel overlay-right">
-        <h1 className="Create-Account">Welcome Back To Boutique Camelia</h1>
+        <h1 className="Create-Account">Create Account</h1>
         <button className="ghost-login" id="signUp" onClick={this.switchRight}>Sign Up</button>
       </div>
     </div>

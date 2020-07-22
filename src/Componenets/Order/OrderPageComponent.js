@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import './OrderPageComponent.scss';
-//import Acc6 from '../../Images/acc6.jpg';
-//import { AiTwotoneDelete } from "react-icons/ai";
 import axios from 'axios';
 
 
@@ -13,7 +11,7 @@ constructor(props){
    }
 }
 test=()=>{
-  axios.get(`http://127.0.0.1:8000/api/orders/${localStorage.getItem('id')}`, {
+  axios.get(`http://127.0.0.1:8000/api/cart/${localStorage.getItem('id')}`, {
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -32,8 +30,9 @@ test=()=>{
   });
 }
 
+
 deleteOrder = (orderId) => {
-  axios.delete(`http://127.0.0.1:8000/api/orders/${orderId}`, {
+  axios.delete(`http://127.0.0.1:8000/api/cart/${orderId}`, {
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -56,6 +55,27 @@ componentDidMount(){
  this.test();
 }
 
+
+
+sendOrders=(e)=>{
+  // const form_data = new FormData();
+    //  form_data.append('Address', this.state.address);
+    //  form_data.append('Phonenumber', this.state.phoneNumber); 
+    //form_data.append('image', this.state.Image);
+    //form_data.append('price', this.state.price);
+       //form_data.append('name', this.state.name);
+        //form_data.append('email', this.state.email);
+      axios.post(`http://127.0.0.1:8000/api/cart/`, {
+      headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization':`Bearer ${localStorage.getItem('token')}`
+      },
+    // body:form_data
+})
+     
+  }
+
   render(){
    
     return( 
@@ -63,8 +83,7 @@ componentDidMount(){
   <div className="OrderPageComponent">
     <div className="OrderPageDiv">
 {this.state.orderProduct.map((data,index)=>{ 
-{/* {this.props.order.map((data,index)=>{ */}
-  console.log(data)
+ // console.log(data)
   return(
   <div id="app">
   <h1 className="OrderPageComponent-h1">ORDER</h1>
@@ -88,9 +107,11 @@ componentDidMount(){
 )})}
 </div>
 <div>
-    <button className="button-send-order">Send This Order</button>
-  </div>
 
+    <button className="button-send-order"  onClick={(e)=>this.sendOrders(e)}> Send this order</button>
+          
+  
+   </div>
      </div>
   
 

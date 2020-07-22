@@ -60,37 +60,43 @@ changeText = e => {
 }
 changefile = e=>{
   e.preventDefault();
-  this.setState({file:e.target.files[0].name})
+  this.setState({file:e.target.files[0]})
 }
 
-addProducts=(e)=>{
+addProducts=(e, close)=>{
   e.preventDefault();
   let token=localStorage.getItem('Admin-token');
    const url = "http://127.0.0.1:8000/api/products";
-  const body = {
-    name:this.state.brand,
-    price:this.state.price,
-    description:this.state.text,
-    image:this.state.file
-  }
+   const form_data = new FormData();
+   form_data.append('name', this.state.brand);
+   form_data.append('price', this.state.price);
+   form_data.append('description', this.state.text);
+   form_data.append('image', this.state.file);
+  
 
-  axios.post(url,body,
-    {headers:{
+  axios.post(url,form_data,
+    {
+      headers: {
       'Authorization': 'Bearer ' + token
-    }}).then((response)=>{
+      }
+    })
+    .then((response) => {
       console.log("zz",response);
-          }).catch(err=>console.log("err",err))
-          this.test() 
+      // close();
+
+      })
+    .catch(err=>console.log("err",err))
+          
+    this.test() 
   }
 
 render(){
   return(
     <>
-<Popup trigger={<button className="dash-board-button"> Add Products</button>}
-    modal
-    closeOnDocumentClick
-    >
-    <div className="addProducts">
+
+    <Popup trigger={<button className="dash-board-button"> Add Products </button>} modal>
+    {close => (
+               <div className="addProducts">
     <form className="addProducts--Form">
     <label >Price</label>
     <input  type="text" name=""  onChange={e=>this.changePrice(e)}/>
@@ -101,12 +107,19 @@ render(){
     <label >Image</label>
     <input  type="file"  onChange={e=>this.changefile(e)}/>
     <div >
-    <button   onClick={(e)=>this.addProducts(e)}>Save</button>
-    <button >Cancel</button>
+    <button className="button-cancel" onClick={() => {
+            close();
+          }}>Cancel</button>
+    <button className="button-cancel" onClick={(e) => {
+            this.addProducts(e, close)
+            close();
+            }}>Save</button>
+                        
     </div>
     </form>
     </div>
-    </Popup>
+    )}
+  </Popup>
 
 
 

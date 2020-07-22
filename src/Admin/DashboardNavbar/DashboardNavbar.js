@@ -26,7 +26,7 @@ class DashboardNavbar extends Component {
 
 					<li> <Link to="/admin/items" className="sidenav--link"><i class="fas fa-folder"></i> items</Link></li>
 
-					<li> <Link to="/admin/user" className="sidenav--link"><i class="fas fa-folder"></i> User</Link></li>
+					<li> <Link to="/admin/user" className="sidenav--link"><i class="fas fa-folder"></i> User Order</Link></li>
 
 					<li><Link to="/admin/component" className="sidenav--link"><i class="fas fa-folder"></i> Admin</Link></li>
 

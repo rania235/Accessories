@@ -19,6 +19,7 @@ class ViewProduct extends React.Component {
     data:[],
     image:'',
     userLike:'',
+    price:"",
     commentText :""
   }
 }
@@ -106,7 +107,7 @@ changeCommentText = (e) => {
 })
   }
   test=()=>{
-    debugger;
+    
     this.props.OrederID(this.state.data);
     this.props.history.push("/order");
   }
@@ -120,6 +121,7 @@ return(
   </figure>
 
   <p className="description-view"> {this.state.data.description}</p>
+  <p className="description-view"> ${this.state.data.price}</p>
   <div className="ViewProduct">
     
  
@@ -136,7 +138,7 @@ return(
             <input type="text" value={this.state.commentText} onChange={(e)=>this.changeCommentText(e)} placeholder="comments"></input>
            <button className="btn btn-primary" className="comments" onClick={this.handleComment}>Comment</button>
            <div className="button-buy">
-           <button onClick={()=>this.test()}>Buy This Product</button>
+           <button onClick={()=>this.test()} className="button-viw">Buy This Product</button>
            </div>
 </div>
   </div>

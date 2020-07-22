@@ -51,7 +51,7 @@ OrederID=(id)=>{
     total:id.price,
     image:id.image
   } 
-  debugger;
+ 
   axios.post('http://127.0.0.1:8000/api/orders/',body,{
   headers:{
     Accept:'application/json',
@@ -59,15 +59,24 @@ OrederID=(id)=>{
     'Authorization':'Bearer '+localStorage.getItem('token')
   }
 }).then((res)=>{
-  debugger;
   console.log("ZeinaBBB",res)
 }).catch((error)=>{
-  debugger;
-
   console.log("ERRRORR",error);
 });
 
 }
+
+// Oredersend=(id)=>{
+//   let a=this.state.order;
+//   a.push(id);
+//   let body={
+//     user_id: localStorage.getItem('id'),
+//     delivered: false,
+//     id_orders:7,
+//     total:id.price,
+//     image:id.image
+//   } 
+// }
 
 addOrderTest=(id)=>{
   let b=this.state.order;
@@ -84,7 +93,7 @@ render() {
     <Route exact path="/" strict exact render={() => <HomePage data={this.state.data} SendID={this.SendID} />} />
     <Route path="/offer" strict exact render={(props)=><OfferPageComponent data={this.state.data} OrederID={this.OrederID}/>}/>
     <Route path="/login"  render={() => <Login/>} />
-    <Route path="/order" strict exact render={(props)=><OrderPageComponent order={this.state.order} />}/>
+    <Route path="/order" strict exact render={(props)=><OrderPageComponent order={this.state.order}  Oredersend={this.Oredersend}/>}/>
     <Route path="/about" strict exact render={(props)=><AboutUs/>}/>
     <Route path="/contact" strict exact render={(props)=><ContactUsComponent/>} />
     <Route path="/view-product/:id" strict exact render={props => <ViewProduct {...props} OrederID={this.OrederID}/> } />
